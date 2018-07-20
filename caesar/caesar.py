@@ -8,11 +8,11 @@ def main():
         exit(1)
 
     key = int(sys.argv[1])
-    space = ' '
-    comma = ','
+    get_text(key)
 
-    print("plaintext:")
-    plain_text = get_string()
+def get_text(key):
+    prompt = "plaintext: "
+    plain_text = get_string(prompt)
 
     ciphered = []
 
@@ -22,11 +22,7 @@ def main():
         else:
             ciphered.append(char)
 
-
-    print("ciphertext:", "".join(ciphered))
-
-    exit(0)
-
+    print("ciphertext:","".join(ciphered))
 
 def cipher(char, key):
     if char.isupper():
