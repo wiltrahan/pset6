@@ -1,3 +1,5 @@
+from nltk.tokenize import sent_tokenize
+
 def lines(a, b):
     """Return lines in both a and b"""
     a_lines = set(a.splitlines())
@@ -11,9 +13,12 @@ def lines(a, b):
 
 def sentences(a, b):
     """Return sentences in both a and b"""
+    sent_a = set(sent_tokenize(a))
+    sent_b = set(sent_tokenize(b))
 
-    # TODO
-    return []
+    both = list(sent_a.intersection(sent_b))
+    # print(both)
+    return both
 
 
 def substrings(a, b, n):
