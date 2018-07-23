@@ -23,6 +23,19 @@ def sentences(a, b):
 
 def substrings(a, b, n):
     """Return substrings of length n in both a and b"""
+    a_list = set(subbed(a, n))
+    b_list = set(subbed(b, n))
 
+    both = list(a_list.intersection(b_list))
+
+    #print(both)
     # TODO
-    return []
+    return both
+
+
+def subbed(str, n):
+    sub = []
+    for i in range(len(str) - n + 1):
+        sub.append(str[i:i + n])
+
+    return sub
